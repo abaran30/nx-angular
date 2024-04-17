@@ -48,6 +48,18 @@
       "inputs": ["production", "^production"]
     }
   },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@pellegrims/nx-remotecache-s3",
+      "options": {
+        "cacheableOperations": ["build", "test", "lint"],
+        "bucket": "nx-angular-remotecache",
+        "region": "us-east-1",
+        "forcePathStyle": true,
+        "readOnly": false
+      }
+    }
+  },
   "plugins": [
     {
       "plugin": "@nx/playwright/plugin",
