@@ -1,5 +1,8 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+import { TourGuideClient } from "@sjmc11/tourguidejs/src/Tour"
+import { TourGuideStep } from '@sjmc11/tourguidejs/src/types/TourGuideStep';
 
 @Component({
   selector: 'app-nx-welcome',
@@ -429,7 +432,7 @@ import { CommonModule } from '@angular/common';
     <div class="wrapper">
       <div class="container">
         <!--  WELCOME  -->
-        <div id="welcome">
+        <div id="welcome" data-my-tour-id="tour-1" data-tg-tour="Cheese tour" data-tg-title="Cheese Title">
           <h1>
             <span> Hello there, </span>
             Welcome app-a 👋
@@ -904,4 +907,19 @@ nx affected:e2e</pre>
   styles: [],
   encapsulation: ViewEncapsulation.None,
 })
-export class NxWelcomeComponent {}
+export class NxWelcomeComponent implements OnInit {
+  ngOnInit() {
+    const steps: TourGuideStep[] = [{
+      content: 'Cheese',
+      title: 'Cheese Title',
+      target: '[data-my-tour-id="tour-1"]',
+      group: '',
+    }];
+
+    const tourGuideClient = new TourGuideClient({
+      // steps: steps
+    });
+
+    tourGuideClient.start();
+  }
+}
