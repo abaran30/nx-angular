@@ -17,7 +17,7 @@
         "tsConfig": "apps/app-a/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": ["apps/app-a/src/favicon.ico", "apps/app-a/src/assets"],
-        "styles": ["apps/app-a/src/styles.scss"],
+        "styles": ["apps/app-a/src/styles.scss", "node_modules/shepherd.js/dist/css/shepherd.css"],
         "scripts": []
       },
       "configurations": {
