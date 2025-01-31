@@ -5,11 +5,10 @@ import { libATitle } from '@nx-angular/lib-a';
 import { libBTitle } from '@nx-angular/lib-b';
 
 @Component({
-  standalone: true,
-  imports: [NxWelcomeComponent, RouterModule],
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+    imports: [NxWelcomeComponent, RouterModule],
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'app-a';
